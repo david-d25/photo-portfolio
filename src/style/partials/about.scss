@@ -1,0 +1,118 @@
+$default-bg: url("https://source.unsplash.com/featured/?mountains,night");
+$alt-bg: url("https://source.unsplash.com/featured/?night");
+
+#about {
+  min-height: 100vh;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+  padding-bottom: 75px;
+  box-shadow: 0 0 100px rgba(0,0,0,.5);
+
+  .about-bg {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: $default-bg center;
+    filter: brightness(.25);
+    background-size: cover;
+    z-index: -2;
+  }
+  
+  .about-alt-bg {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    right: -100%;
+    top: 0;
+    background: $alt-bg center;
+    filter: brightness(.25);
+    background-size: cover;
+    z-index: -1;
+    transition: right .7s cubic-bezier(.59,.24,.21,1.24);
+  }
+
+  .alt-bg-activated {
+    right: 0;
+  }
+
+  .unlike-bg {
+    position: absolute;
+    top: 25px;
+    right: 50px;
+    text-align: right;
+    opacity: .75;
+    color: white;
+    @media screen and (max-width: 800px) {
+      display: none;
+    }
+  }
+  .unlike-bg:hover {
+    cursor: pointer;
+    border-bottom: dotted white 1px;
+    opacity: 1;
+  }
+
+  .about-me {
+    font-size: 300%;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 200;
+    margin-bottom: 35px;
+    color: white;
+  }
+
+  #works {
+    margin-left: auto;
+    margin-right: auto;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+
+    p {
+      color: white;
+    }
+
+    .portfolio-work {
+      transition: .3s;
+      cursor: pointer;
+      display: inline-block;
+      margin: 20px;
+      outline: none;
+
+      a {
+        text-decoration: none;
+
+        .work-image {
+          width: 200px;
+          height: 200px;
+          display: inline-block;
+          border-radius: 100%;
+          background-size: cover !important;
+          text-align: center;
+        }
+
+        .portfolio-name {
+          font-weight: 200;
+          font-size: 1.2em;
+          margin-bottom: 10px;
+        }
+
+        .see-works {
+          display: inline-block;
+          font-size: .8em;
+          color: aqua;
+          margin: 0;
+        }
+      }
+
+      &:hover {
+        .see-works {
+          border-bottom: dotted aqua 1px;
+        }
+      }
+    }
+  }
+}

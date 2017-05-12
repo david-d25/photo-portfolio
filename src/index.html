@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head lang="ru">
+  <meta charset="UTF-8">
+  <title>Обработка фото, ретушь, фотомонтаж от 30р.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+  <div id="preloader"></div>
+  <style>
+    #preloader {
+      position: fixed;
+      left: 0;
+      top: 0;
+      z-index: 999;
+      width: 100%;
+      height: 100%;
+      overflow: visible;
+      background: #333 url('img/loading.gif') no-repeat center center;
+    }
+  </style>
+
+  <div id="header">
+    <div class="header-bg" data-parallax="scroll" data-image-src="img/header/header-bg.jpg" data-speed=".5"></div>
+    <div class="avatar-mask">
+      <div class="header-avatar">
+        <img src="img/header/header-avatar.jpg">
+      </div>
+      <p class="hello">Привет!</p>
+      <p class="about">
+        Я Давид, занимаюсь обработкой фотографий, в простонародье я «фотошоплю». Прокрути вниз. чтобы посмотреть, как это выглядит!
+      </p>
+      <p class="about-mobile">
+        Привет! Я Давид, занимаюсь обработкой фото, ретушью и фотомонтажом.
+      </p>
+    </div>
+    <a href="#about"><div class="slide-arrow-down"></div></a>
+  </div>
+  
+  <div id="about">
+    <div class="about-bg"></div>
+    <div class="about-alt-bg"></div>
+    <p class="unlike-bg">Мне не нравится этот фон!</p>
+    <p class="about-me">что я могу</p>
+    <div id="works"></div>
+    <a href="#contact"><div class="slide-arrow-down"></div></a>
+  </div>
+
+  <div id="contact">
+    <div class="contact-bg" data-parallax="scroll" data-image-src="https://source.unsplash.com/featured/?stars,dark" data-speed=".5"></div>
+    <div class="container">
+      <p class="contact-me">свяжитесь со мной</p>
+      <p>Напишите мне о ваших желаниях, я обязательно отвечу!</p>
+      <form method="post" action="./send.php">
+        <input type="text" name="name" placeholder="Как мне вас называть?" autocomplete="off">
+        <br>
+        <input type="text" name="email" placeholder="Ваш EMail" autocomplete="off">
+        <br>
+        <textarea name="long-desc" placeholder="Напишите здесь, что вы хотите"></textarea>
+        <br>
+        <input type="submit" value="отправить">
+      </form>
+    </div>
+  </div>
+</body>
+<script src="js/main.js"></script>
+</html>
+<script id="work-template" type="text/x-handlebars-template">
+  <div class="portfolio-work">
+    <a href="portfolio.php?request={{request}}">
+      <div class="work-image" style="background: url({{image}}) center no-repeat;"></div>
+      <p class="portfolio-name">{{name}}</p>
+      <p class="see-works">Посмотреть примеры</p>
+    </a>
+  </div>
+</script>

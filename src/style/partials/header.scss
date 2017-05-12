@@ -1,0 +1,231 @@
+$animation-speed: 7s;
+$cubic-bezier: cubic-bezier(.8,0,.2,1);
+$scroller-arrow-border-style: solid white 2px;
+$scroller-arrow-size: 25px;
+
+.parallax-mirror img[src*="header"] {
+  opacity: .6;
+}
+
+#header {
+  height: 100vh;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+
+  .header-bg {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    margin: 1px;
+    opacity: .6;
+  }
+
+  .avatar-mask-animated {
+    animation: avatar-animate $animation-speed $cubic-bezier;
+
+    @media screen and (max-width: 700px)  {
+      animation: none;
+    }
+  }
+
+  .avatar-mask {
+    position: absolute;
+    width: 450px;
+    height: 350px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    overflow: hidden;
+    text-align: center;
+    transition: $cubic-bezier;
+
+    .header-avatar-animated {
+      animation: header-avatar-animate $animation-speed $cubic-bezier;
+      @media screen and (max-width: 700px)  {
+        animation: none;
+      }
+    }
+    .header-avatar {
+      height: 250px;
+      width: 250px;
+      margin: auto;
+      overflow: hidden;
+      border-radius: 50%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1;
+
+      img {
+        width: 100%;
+        position: absolute;
+        left: 0;
+      }
+    }
+  }
+  .hello-animated {
+    animation: hello-opacity-animate $animation-speed $cubic-bezier;
+    @media screen and (max-width: 700px) {
+      animation: none;
+    }
+  }
+  .hello {
+    line-height: 250px;
+    white-space: nowrap;
+    float: right;
+    font-weight: 100;
+    text-transform: uppercase;
+    margin: 0;
+    color: #222;
+    font-size: 80px;
+    opacity: 0;
+    transition: $cubic-bezier;
+  }
+
+  .about-animated {
+    animation: about-opacity-animate $animation-speed $cubic-bezier;
+    @media screen and (max-width: 700px) {
+      animation: none;
+    }
+  }
+  .about {
+    position: absolute;
+    margin: auto;
+    font-weight: 200;
+    font-size: 20px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  .about-mobile {
+    position: absolute;
+    margin: auto;
+    font-weight: 200;
+    font-size: 20px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+  }
+}
+
+.slide-arrow-down:after,
+.slide-arrow-down {
+  position: absolute;
+  display: block;
+  content: "";
+  bottom: 50px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  opacity: .75;
+  transition: .3s;
+  width: $scroller-arrow-size;
+  height: $scroller-arrow-size;
+  transform: rotate(45deg);
+  border-right: $scroller-arrow-border-style;
+  border-bottom: $scroller-arrow-border-style;
+}
+.slide-arrow-down:after {
+  transform: none;
+  top: 10px;
+  left: 10px;
+  margin: 0;
+}
+.slide-arrow-down:hover {
+  opacity: 1;
+  bottom: 40px;
+}
+.slide-arrow-down:hover:after {
+  opacity: 1;
+  top: 15px;
+  left: 15px;
+}
+
+@media screen and (max-width: 500px) {
+  #header {
+    .avatar-mask {
+      width: 100%;
+      height: 325px;
+    }
+    .about {
+      display: none;
+    }
+    .about-mobile {
+      display: inline-block;
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  #header {
+    .avatar-mask {
+      height: 300px;
+
+      .header-avatar {
+        width: 200px;
+        height: 200px;
+      }
+    }
+  }
+}
+
+@keyframes header-avatar-animate {
+  0%, 59% {
+    margin-left: 0;
+  }
+  60% {
+    margin-left: auto;
+  }
+}
+@keyframes about-opacity-animate {
+  0%, 60% {
+    opacity: 0;
+  }
+  70%, 90% {
+    opacity: 1;
+  }
+}
+@keyframes hello-opacity-animate {
+  0%, 30% {
+    opacity: 0;
+  }
+  40%, 50% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 0;
+  }
+}
+@keyframes avatar-animate {
+  0%, 12% {
+    top: -100vh;
+    height: 250px;
+    opacity: 0;
+  }
+  20%, 30% {
+    top: 0;
+    opacity: 1;
+    width: 250px;
+  }
+  40%, 50% {
+    width: 600px;
+  }
+  60% {
+    height: 250px;
+    width: 250px;
+    top: 0;
+    transition: width none;
+  }
+  61%, 69% {
+    width: 450px;
+  }
+  70%, 100% {
+    height: 350px;
+  }
+}

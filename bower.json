@@ -1,0 +1,23 @@
+{
+  "name": "portfolio-project",
+  "description": "My portfolio site",
+  "main": "index.html",
+  "authors": [
+    "David Davtian"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "normalize.css": "*",
+    "jquery": "2.*",
+    "autosize": "*",
+    "handlebars": "*"
+  }
+}

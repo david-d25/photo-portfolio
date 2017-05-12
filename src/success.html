@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head lang="ru">
+    <meta charset="utf-8">
+    <title>Запрос отправлен</title>
+    <link rel="stylesheet" type="text/css" href="css/sended.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <div id="sended">
+      <div id="preloader"></div>
+      <style>
+        #preloader {
+          position: fixed;
+          left: 0;
+          top: 0;
+          z-index: 999;
+          width: 100%;
+          height: 100%;
+          overflow: visible;
+          background: #333 url('img/loading.gif') no-repeat center;
+        }
+      </style>
+
+      <p class="recieved">Твое сообщение получено</p>
+      <p>Скоро я отвечу на него!</p>
+      <img width="200px" src="img/sended/waiting.png">
+    </div>
+  </body>
+  <script src="js/sended.js"></script>
+</html>

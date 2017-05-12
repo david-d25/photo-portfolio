@@ -1,0 +1,135 @@
+.parallax-mirror {
+  margin: -1px;
+
+  img[src*="contact"] {
+    //filter: blur(12px);
+    //transform: scale(1.2);
+  }
+}
+
+#contact {
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 40px;
+
+  .container {
+    width: 650px;
+    @media screen and (max-width: 700px) {
+      width: auto;
+      margin: 0 10px 0;
+    }
+  }
+
+  .contact-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: -999;
+    width: 100%;
+    filter: brightness(.75);
+  }
+
+  .contact-me {
+    font-size: 300%;
+    text-transform: uppercase;
+    font-weight: 200;
+    position: relative;
+    color: white;
+    margin-bottom: 20px;
+
+    &:after {
+      display: block;
+      content: "Ну пожалуйста :c";
+      text-transform: none;
+      position: absolute;
+      right: 60px;
+      bottom: -10px;
+      font-size: 12px;
+      opacity: 0;
+      transition: .3s;
+    }
+
+    &:hover:after {
+      opacity: .75;
+    }
+
+    +p {
+      color: white;
+      font-weight: 200;
+    }
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    flex-wrap: nowrap;
+    align-items: left;
+    justify-content: space-around;
+  }
+
+  textarea,
+  input[type="text"] {
+    height: 40px;
+    background: transparent;
+    border: solid white 1px;
+    outline: none;
+    color: white;
+    opacity: .5;
+    transition: .3s;
+    padding-left: 10px;
+
+    &::placeholder {
+      color: white;
+    }
+
+    &:focus {
+      opacity: 1;
+    }
+  }
+
+  input[name="email"],
+  input[name="name"] {
+    width: 400px;
+    @media screen and (max-width: 700px) {
+      width: 100%;
+    }
+  }
+
+  textarea {
+    padding: 10px;
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 100px;
+  }
+
+  input[type="submit"] {
+    width: 100%;
+    height: 100px;
+    background: rgba(255,255,255,.25);
+    border: solid white 1px;
+    outline: none;
+    color: white;
+    opacity: .5;
+    transition: .3s;
+    text-transform: uppercase;
+    font-size: 36px;
+
+    &:hover {
+      opacity: 1;
+      cursor: pointer;
+    }
+  }
+}
+.correct {
+  border-color: green !important;
+  box-shadow: 0px 0px 5px rgba(0,255,0,.2);
+  opacity: 1 !important;
+}
+.wrong {
+  border-color: red !important;
+  opacity: 1 !important;
+}

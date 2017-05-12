@@ -1,0 +1,16 @@
+@import "partials/fonts";
+
+* {
+  box-sizing: border-box;
+}
+
+html,body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 1280px;
+  margin: 0 auto;
+  text-align: center;
+}

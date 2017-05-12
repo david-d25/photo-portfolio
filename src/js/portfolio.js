@@ -32,6 +32,12 @@ var data = {
       name: "Эффекты с огнем",
       description: "Огненная птица в руках",
       price: "120[rub]"
+    },
+    {
+      image: "img/portfolio/photomontage/3.png",
+      name: "Изменение надписи",
+      description: "Linux Mint",
+      price: "120[rub]"
     }
   ],
   "low-poly": [
